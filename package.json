@@ -1,0 +1,25 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@nuxt/ui": "^2.13.0",
+    "nuxt": "^3.10.1",
+    "push-dir": "^0.4.1",
+    "sass": "^1.75.0"
+  },
+  "dependencies": {
+    "@tsdotnet/stopwatch": "^1.0.13",
+    "axios": "^1.6.8",
+    "ms": "^2.1.3"
+  }
+}
