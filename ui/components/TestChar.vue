@@ -4,7 +4,7 @@
       ref="testChar"
       @keydown="handleKeyDown"
       tabindex="0"
-      class="test-char shadow-lg inline-block text-center text-gray-500 font-bold focus:border-spacing-3"
+      class="test-char shadow-lg inline-block text-gray-500 font-bold border-spacing-3"
       :class="{ active: isActive, hasDanger: hasDanger }"
   >
     <label >{{ char }}</label>
@@ -14,7 +14,6 @@
 
 <script setup lang="ts">
 import {onMounted, ref} from 'vue';
-import Stopwatch from "@tsdotnet/stopwatch";
 
 const props = defineProps<{
   char: string
@@ -25,7 +24,6 @@ const charProp = props.char;
 const testChar = ref<HTMLElement | null>(null);
 const isActive = ref(false);
 const hasDanger = ref(false);
-const timer = new Stopwatch();
 export interface TypeErrorEventPayload {
   isErrorChar: boolean,
 }

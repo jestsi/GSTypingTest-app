@@ -1,22 +1,17 @@
 <script setup lang="ts">
 import {computed, ref} from 'vue';
-import Stopwatch from '@tsdotnet/stopwatch';
 
-const testText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
-const timer = ref<Stopwatch | null>(null);
+const testText = 'test app test app h test app h';
 const countErrors = ref<number>(0);
 const startTime = ref<number | null>(null);
 const endTime = ref<number | null>(null);
 
 const startTimer = () => {
-  timer.value = new Stopwatch();
-  timer.value.start();
   startTime.value = Date.now();
 };
 
 const stopTimer = () => {
-  if (timer.value) {
-    timer.value.stop();
+  if (startTime.value) {
     endTime.value = Date.now();
   }
 };

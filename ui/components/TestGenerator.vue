@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import TestChar, {type TypeErrorEventPayload} from "~/components/TestChar.vue";
+import TestChar, {type TypeErrorEventPayload} from "~/ui/components/TestChar.vue";
 
 const props = defineProps<{
     text: string
@@ -12,7 +12,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div class="flex-wrap space-x-0 space-y-0 m-0 p-0 ">
+  <div class="flex flex-wrap items-center space-x-0 space-y-0 m-0 p-0 ">
     <TestChar
         v-for="(char, index) in props.text"
         :key="index"
@@ -22,7 +22,7 @@ const props = defineProps<{
         @complete="props.complete"
         @start="props.start"
         @on-key-press="payload => countSpaces += Number(payload.char === ' ')"
-        class="space-y-20 space-x-0 margin: 0 p-0 m-0"
+        class="space-y-20 space-x-0 p-0 m-0"
     />
   </div>
 </template>
