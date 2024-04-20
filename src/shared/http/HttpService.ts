@@ -7,13 +7,14 @@ import {ParseError} from "~/src/shared/error/ParseError";
 import {err, Result} from "neverthrow";
 import {HttpError} from "~/src/shared/http/HttpError";
 import type {AxiosCreator} from "~/src/shared/http/AxiosCreator";
+import {inject, injectable} from "inversify-props";
 
+@injectable()
 export class HttpService implements IHttpService {
     private axiosService: AxiosInstance
-    private axiosCreator: AxiosCreator
+    @inject() private axiosCreator: AxiosCreator
 
-    // @ts-ignore
-    constructor(@inject('axiosCreator') axiosCreator: AxiosCreator) {
+    constructor(axiosCreator: AxiosCreator) {
         this.axiosCreator = axiosCreator
         this.axiosService = axios.create()
 

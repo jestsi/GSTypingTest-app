@@ -5,10 +5,11 @@ import {QuoteParser} from "~/src/modules/speed-typing-test/infrastructure/parser
 import type {IQuoteParser} from "~/src/modules/speed-typing-test/infrastructure/types/quote/IQuoteParser";
 import type {IQuote} from "~/src/modules/speed-typing-test/domains/types/IQuote";
 import {Result} from "neverthrow";
+import {inject} from "inversify-props";
 
 export class TypingApiService {
     private parser: IQuoteParser;
-    @inject() private httpService: IHttpService;
+    @inject() private httpService!: IHttpService;
 
     constructor(httpService: IHttpService) {
         this.parser = new QuoteParser();
