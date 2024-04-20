@@ -7,7 +7,7 @@ import type {IQuote} from "~/src/modules/speed-typing-test/domains/types/IQuote"
 import {Result} from "neverthrow";
 import {inject} from "inversify-props";
 
-export class TypingApiService {
+export class TypingFishApiService {
     private parser: IQuoteParser;
     @inject() private httpService!: IHttpService;
 
